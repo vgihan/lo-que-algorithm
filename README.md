@@ -1,2 +1,2 @@
-# lo-que-algorithm
+# wecanknow
 Algorithm Study
