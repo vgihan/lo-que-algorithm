@@ -1,0 +1,52 @@
+import copy
+n = int(input())
+li = []
+container = []
+for i in range(n) :
+    box = list(map(int,input().split()))
+    li.append(box)
+    # box.sort()
+    boxSort = sorted(box)
+    container.append(boxSort[1]-boxSort[0])                 ### 입력값 저장과 해당 줄의 최솟값 그다음으로 작은값의 차 따로 저장
+
+containerSort = sorted(container)
+maxValueIndex = container.index(containerSort[-1])
+liBox = copy.deepcopy(li[maxValueIndex])
+
+liBoxSort = sorted(liBox)
+cost = liBoxSort[0]                                         ### 위에 차를 따로 저장한 배열에서 가장 차이가 큰 값을 찾아서 그 값에 해당하는 배열위치 저장
+indexBox = li[maxValueIndex].index(liBoxSort[0])            ### 그 위치의 값 cost에 추가하고 r인지 g인지 b인지 저장
+# print('---------------')
+# print(cost)
+# print(liBox)
+# print(indexBox)
+# print(li[maxValueIndex])
+
+for i in range(maxValueIndex-1,-1,-1) :                     ###  그 위치 앞뒤로 비교
+    liBox = sorted(li[i]) 
+    if liBox[0] != li[i][indexBox] :    
+        cost += liBox[0]
+        indexBox = li[i].index(liBox[0])
+    else :
+        cost += liBox[1]
+        indexBox = li[i].index(liBox[1])
+    # print(cost)
+    # print(indexBox)
+    # print(liBox)
+    # print(li[i])
+
+liBox = copy.deepcopy(li[maxValueIndex])
+liBoxSort = sorted(liBox)
+indexBox = li[maxValueIndex].index(liBoxSort[0])
+print(indexBox)
+for i in range(maxValueIndex + 1, n) :
+    liBox = sorted(li[i]) 
+    if liBox[0] != li[i][indexBox] :    
+        cost += liBox[0]
+        indexBox = li[i].index(liBox[0])
+    else :
+        cost += liBox[1]
+        indexBox = li[i].index(liBox[1])
+
+# print(li)
+print(cost)
