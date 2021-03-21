@@ -5,8 +5,8 @@ using namespace std;
 int main()
 {
 	int X;
-	int i = 1; // ¸î¹øÂ° ´ë°¢¼±ÀÎÁö
-	int A = 0; // ³ª¸ÓÁö
+	int i = 1; // ëª‡ë²ˆì§¸ ëŒ€ê°ì„ ì¸ì§€
+	int A = 0; // ë‚˜ë¨¸ì§€
 	cin >> X;
 	for(int sum = 0; sum+i < X ; i++)
 	{
