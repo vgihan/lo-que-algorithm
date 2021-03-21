@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
 	int T;
-	int H, W, N; // Ãþ,¹øÈ£,¸î¹øÂ°¼Õ´ÔÀÎÁö
+	int H, W, N; // ì¸µ,ë²ˆí˜¸,ëª‡ë²ˆì§¸ì†ë‹˜ì¸ì§€
 	int X, Y;
 	cin >> T;
 	for (int i = 0; i < T; i++)
@@ -26,7 +26,7 @@ int main()
 			cout << Y + X << endl;
 		}
 		else
-			cout << "¹æÀÌ ´Ù Ã¡¾î¿ä";
+			cout << "ë°©ì´ ë‹¤ ì°¼ì–´ìš”";
 	}
 	return 0;
 }
