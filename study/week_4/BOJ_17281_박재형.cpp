@@ -109,7 +109,7 @@ void gamestart()
             }
             if (outcnt == 3)
                 break;
-            start = 1;
+            start = 1;	// 3아웃이 안되고 9번타석까지 돌면 다시 1번타석으로 돌아감.
         }
     }
 }
